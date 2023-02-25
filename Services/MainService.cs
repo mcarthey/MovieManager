@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using MovieManager.Dao;
+using MovieManager.Dao.Interfaces;
 using MovieManager.Helpers;
 using MovieManager.Models;
 using Spectre.Console;

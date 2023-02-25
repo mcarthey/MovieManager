@@ -5,27 +5,27 @@ using MovieManager.Models;
 
 namespace MovieManager.Dao;
 
-public class MovieContext : IMovieContext
+public class ShowContext : IShowContext
 {
-    public MovieContext()
+    public ShowContext()
     {
-        PopulateMovies();
+        PopulateShows();
     }
 
-    public List<Movie> Movies { get; set; }
+    public List<Show> Shows { get; set; }
 
-    private void PopulateMovies()
+    private void PopulateShows()
     {
-        Movies = new List<Movie>();
+        Shows = new List<Show>();
         for (var i = 0; i < 5; i++)
         {
-            var movie = new Movie
+            var show = new Show
             {
                 Title = Lorem.Sentence(),
                 Year = RandomNumber.Next(1900, 2023).ToString(),
-                Theater = Company.Name()
+                Network = Company.CatchPhrase()
             };
-            Movies.Add(movie);
+            Shows.Add(show);
         }
     }
 }

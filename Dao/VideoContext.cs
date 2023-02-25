@@ -5,27 +5,27 @@ using MovieManager.Models;
 
 namespace MovieManager.Dao;
 
-public class MovieContext : IMovieContext
+public class VideoContext : IVideoContext
 {
-    public MovieContext()
+    public VideoContext()
     {
-        PopulateMovies();
+        PopulateVideos();
     }
 
-    public List<Movie> Movies { get; set; }
+    public List<Video> Videos { get; set; }
 
-    private void PopulateMovies()
+    private void PopulateVideos()
     {
-        Movies = new List<Movie>();
+        Videos = new List<Video>();
         for (var i = 0; i < 5; i++)
         {
-            var movie = new Movie
+            var video = new Video
             {
                 Title = Lorem.Sentence(),
                 Year = RandomNumber.Next(1900, 2023).ToString(),
-                Theater = Company.Name()
+                Format = Company.BS()
             };
-            Movies.Add(movie);
+            Videos.Add(video);
         }
     }
 }

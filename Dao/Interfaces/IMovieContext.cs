@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using MovieManager.Models;
 
-namespace MovieManager.Dao;
+namespace MovieManager.Dao.Interfaces;
 
 public interface IMovieContext
 {
