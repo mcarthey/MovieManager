@@ -24,7 +24,7 @@ internal class Startup
         // Add new lines of code here to register any interfaces and concrete services you create
         services.AddTransient<IMainService, MainService>();
         services.AddTransient<IRepository, MovieRepository>();
-        services.AddTransient<IContext, MediaContext>();
+        services.AddTransient<IMovieContext, MovieContext>();
 
         return services.BuildServiceProvider();
     }

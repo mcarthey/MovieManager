@@ -4,9 +4,9 @@ using MovieManager.Models;
 
 namespace MovieManager.Dao;
 
-public class MediaContext : IContext
+public class MovieContext : IMovieContext
 {
-    public MediaContext()
+    public MovieContext()
     {
         PopulateMovies();
         PopulateShows();

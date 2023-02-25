@@ -6,30 +6,30 @@ namespace MovieManager.Dao;
 
 public class MovieRepository : IRepository
 {
-    private readonly IContext _context;
+    private readonly IMovieContext _movieContext;
 
-    public MovieRepository(IContext context)
+    public MovieRepository(IMovieContext movieContext)
     {
-        _context = context;
+        _movieContext = movieContext;
     }
 
     public void Add(Media media)
     {
-        _context.Movies.Add((Movie) media);
+        _movieContext.Movies.Add((Movie) media);
     }
 
     public IEnumerable<Media> Find(string id)
     {
-        return _context.Movies.Where(x => x.Id == id);
+        return _movieContext.Movies.Where(x => x.Id == id);
     }
 
     public IEnumerable<Media> GetAll()
     {
-        return _context.Movies;
+        return _movieContext.Movies;
     }
 
     public Media GetByTitle(string title)
     {
-        return _context.Movies.FirstOrDefault(x => x.Title == title);
+        return _movieContext.Movies.FirstOrDefault(x => x.Title == title);
     }
 }
